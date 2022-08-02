@@ -3,4 +3,4 @@ function ExecuteRuby()
   execute "!clear && /usr/bin/ruby -w ".file_name
 endfunction
 
-map <F4> :call ExecuteRuby()<CR>
+map <leader>x :call ExecuteRuby()<CR>
