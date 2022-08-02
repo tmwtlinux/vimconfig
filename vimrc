@@ -85,19 +85,6 @@ function HTML_basic_structure ()
   :call setline(11, "</html>")
 endfunction
 
-" for opening a browser
-function OpenBrowser () 
-"  let file_name = expand('%:p')
-  let file_name = '~/Documents/project1/index.html'
-  exec "!clear && /usr/bin/chromium ".file_name
-endfunc
-
-function RubySheBang ()
-  let SheBang='#!/usr/bin/ruby'
-  :call setline(1, SheBang)
-  execute "normal o\<esc>"
-endfunction
-
 function CreateGitRepo(path)
   let initial_branch = input('Enter initial branch name: ')
   execute "!clear && git init --initial-branch=".g:initial_branch." --quiet ".a:path
@@ -112,19 +99,16 @@ function GitCommit ()
   exec "!git push"
 endfunction
 
-function ExecuteRuby()
-  let file_name=expand('%:p')
-  execute "!clear && /usr/bin/ruby -w ".file_name
-endfunction
-
 augroup scripts
   autocmd BufNewFile  *.sh call setline('.', '#!/bin/bash') | source ~/.vim/bash/bash.vim
   autocmd BufRead     *.sh source ~/.vim/bash/bash.vim
 
-  autocmd BufNewFile  *.py call setline(1, '#!/usr/bin/python') | source ~/.vim/python/vimrc
+  autocmd BufNewFile  *.py call setline(1, '#!/usr/bin/python') | source ~/.vim/python/python.vim
   autocmd BufRead     *.py source ~/.vim/python/python.vim
 
-  autocmd BufNewFile  *.rb call RubySheBang() 
+  autocmd BufNewFile  *.rb call setline(1, '#!/usr/bin/ruby') | source ~/.vim/ruby/ruby.vim
+  autocmd BufRead     *.rb source ~/.vim/ruby/ruby.vim
+
   autocmd BufNewFile  *.html call HTML_basic_structure()
 augroup END
 
@@ -134,7 +118,6 @@ map <leader>n :set nu!<CR>
 map <leader>q :call CreateGitRepo('.')<return>
 map <F2> :call GitCommit()<return>
 map <F3> :call CommentLineOut()<return>
-map <F4> :call ExecuteRuby()<return>
 
 :command Reload :source ~/.vimrc
 :command Vimrc :tabedit ~/.vimrc

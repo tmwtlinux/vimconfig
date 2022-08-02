@@ -13,7 +13,7 @@ function install_vimrc() {
 
 # description: install vim-folder as $HOME/.vim
 function install_vim() {
-  /usr/bin/cp -rfv vim "$HOME/.vim"
+  /usr/bin/cp -rfv vim/* "$HOME/.vim/"
 }
 
 # description: main function  
@@ -50,7 +50,6 @@ function main () {
       esac
     fi
   done
-
   echo "Installing done ... have good day and stay hydrated =) "
 }
 
