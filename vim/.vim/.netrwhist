@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/mbock/Documents/mp3tagger/helper'
+let g:netrw_dirhist_4='/home/mbock/Documents/tkinter/controller'
+let g:netrw_dirhist_3='/home/mbock/Documents/tkinter/view'
+let g:netrw_dirhist_2='/home/mbock/Documents/tkinter'
+let g:netrw_dirhist_1='/home/mbock/Documents/tkinter/view'
+let g:netrw_dirhist_0='/home/mbock/Documents/tkinter'
+let g:netrw_dirhist_9='/home/mbock/Documents/tkinter/model'
+let g:netrw_dirhist_8='/home/mbock/Documents/tkinter/controller'
+let g:netrw_dirhist_7='/home/mbock/Documents/tkinter'
+let g:netrw_dirhist_6='/home/mbock/Documents/tkinter/model/exception'

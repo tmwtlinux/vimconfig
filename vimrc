@@ -9,7 +9,7 @@ set statusline=%F%m\ line\ %l\/%L%=col\ %c\ (%b)\ %v\ %y
 set wildmenu
 set undofile
 set undodir=~/.vim/undodir
-set path+=**
+set path+=*/**
 set runtimepath=~/.vimplugins,$VIMRUNTIME,~/.vim
 set mouse=c
 set hidden
@@ -28,7 +28,7 @@ if has('syntax')
 endif
 
 let g:netrw_altv=1
-let g:netrw_winsize=40
+let g:netrw_winsize=75
 let g:netrw_banner=0
 
 let g:default_comment = '#'
@@ -109,6 +109,9 @@ augroup scripts
   autocmd BufNewFile  *.rb call setline(1, '#!/usr/bin/ruby') | source ~/.vim/ruby/ruby.vim
   autocmd BufRead     *.rb source ~/.vim/ruby/ruby.vim
 
+  autocmd BufNewFile  *.yaml,*.yml call setline(1, '---') | source ~/.vim/ansible/ansible.vim
+  autocmd BufRead     *.yaml,*.yml source ~/.vim/ansible/ansible.vim
+
   autocmd BufNewFile  *.html call HTML_basic_structure()
 augroup END
 
@@ -122,3 +125,6 @@ map <F3> :call CommentLineOut()<return>
 :command Reload :source ~/.vimrc
 :command Vimrc :tabedit ~/.vimrc
 :command Shell w!|sh
+
+
+" just testing
